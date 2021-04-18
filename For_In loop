@@ -1,0 +1,12 @@
+a = [5, 16, 8, -3, 4, 86, 28]
+b = [16, -3, 86, 28]
+
+def is_subseq_forin(main_arr, sub_arr):
+    sub_arr_pointer = 0
+    for i in main_arr:
+        if sub_arr_pointer == (len(sub_arr)):
+            break
+        if sub_arr[sub_arr_pointer] == i:
+            sub_arr_pointer += 1
+    return (sub_arr_pointer == len(sub_arr))
+print(is_subseq_forin(a, b))
