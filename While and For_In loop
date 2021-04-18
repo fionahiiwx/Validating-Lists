@@ -1,0 +1,38 @@
+## Given 2 non-empty arrays of int
+## write a function that determines whether the 2nd array is a subsequence of the first one
+
+## 2 var into a list
+## Sample input:
+a = [5, 16, 8, -3, 4, 86, 28]
+b = [16, -3, 86, 28]
+
+len_a = len(a)
+len_b = len(b)
+
+def is_subseq(list1, list2, len1, len2):
+    x = True
+    z = 0
+    while True:
+        for i in range(len2):
+            for j in range(len1):
+                if list2[i] in list1[z:len1]:
+                    if (list2[i] == list1[j]):
+                        z = j
+                        break
+                else:
+                    x = False
+                    break
+            if (j == len1):
+                break
+        return x
+
+if len_a > len_b:
+    if (is_subseq(a, b, len_a, len_b)):
+        print(b, "is subsequence of", a)
+    else:
+        print(b, "is not a subsequence of", a)
+else:
+    if (is_subseq(b, a, len_b, len_a)):
+        print(a, "is subsequence of", b)
+    else:
+        print(a, "is not a subsequence of", b)
