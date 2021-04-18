@@ -1,0 +1,13 @@
+a = [5, 16, 8, -3, 4, 86, 28]
+b = [16, -3, 86, 28]
+
+def is_subseq_while(main_arr, sub_arr):
+    main_arr_pointer = 0
+    sub_arr_pointer = 0
+    while (main_arr_pointer < len(main_arr)) & (sub_arr_pointer < len(sub_arr)):
+        if main_arr[main_arr_pointer] == sub_arr[sub_arr_pointer]:
+            sub_arr_pointer += 1
+        main_arr_pointer += 1
+    return (sub_arr_pointer == len(sub_arr))
+
+print(is_subseq_while(a, b))
